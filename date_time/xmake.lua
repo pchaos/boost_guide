@@ -24,11 +24,20 @@ target("datetime")
     -- add_links("boost_date_time")
     -- add_required(" ")
     before_run(function (target)
-      -- print("copy $(scriptdir)/date_time_zonespec.csvi to $(buildir)/$(arch)/$(plat)/$(mode)/")
+       -- print("copy $(scriptdir)/date_time_zonespec.csv", "$(buildir)/$(plat)/$(arch)/$(mode)/")
        os.cp("$(scriptdir)/date_time_zonespec.csv", "$(buildir)/$(plat)/$(arch)/$(mode)/")
     end)
    -- on_run(function (target)
       -- print("hello xmake!")
     -- end)
    
+target("date1")
+    set_kind("binary")
+    add_files("date1.cpp")
+
+target("date2")
+    set_kind("binary")
+    add_files("date2.cpp")
+
+
 
